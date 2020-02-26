@@ -122,7 +122,7 @@ func ExampleAPIGatewayDomainDecorator() {
 	// Deploy it
 	stackName := spartaCF.UserScopedStackName("CustomAPIGateway")
 	sparta.MainEx(stackName,
-		fmt.Sprintf("CustomAPIGateway defines a stack with a custom APIGateway Domain Name"),
+		fmt.Sprint("CustomAPIGateway defines a stack with a custom APIGateway Domain Name"),
 		lambdaFuncs(apiGateway),
 		apiGateway,
 		nil,
