@@ -431,7 +431,7 @@ func EnsureFormatted() error {
 func EnsureStaticChecks() error {
 	// https://staticcheck.io/
 	staticCheckErr := sh.Run("staticcheck",
-		"-version")
+		"-debug.version")
 	if staticCheckErr != nil {
 		return staticCheckErr
 	}
