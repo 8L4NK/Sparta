@@ -431,6 +431,12 @@ func EnsureFormatted() error {
 func EnsureStaticChecks() error {
 	// https://staticcheck.io/
 	staticCheckErr := sh.Run("staticcheck",
+		"-version")
+	if staticCheckErr != nil {
+		return staticCheckErr
+	}
+
+	staticCheckErr = sh.Run("staticcheck",
 		"github.com/mweagle/Sparta/...")
 	if staticCheckErr != nil {
 		return staticCheckErr
